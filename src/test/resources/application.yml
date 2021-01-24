@@ -1,0 +1,5 @@
+cassandra:
+  contactpoints: localhost
+  port: 9142
+  keyspace: test_cassandra_tutorial
+  basepackages: com.wave.tutorial
