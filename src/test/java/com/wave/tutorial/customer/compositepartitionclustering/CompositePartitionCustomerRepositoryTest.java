@@ -3,6 +3,7 @@ package com.wave.tutorial.customer.compositepartitionclustering;
 
 import com.wave.tutorial.CassandraConfig;
 import com.wave.tutorial.customer.EmbeddedCassandra;
+import com.wave.tutorial.customer.common.BaseTest;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @ContextConfiguration(classes = CassandraConfig.class)
-public class CompositePartitionCustomerRepositoryTest {
+public class CompositePartitionCustomerRepositoryTest extends BaseTest {
 
-    private static EmbeddedCassandra embeddedCassandra = new EmbeddedCassandra();
     @Autowired
     private CustomerCompositePartitionAndClusteringRepository repository;
-
-    @AfterAll
-    public static void afterClass() {
-        //embeddedCassandra.stop();
-    }
 
     @Test
     public void shouldSaveAndRetrieveCustomer() {

@@ -11,11 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration(classes = CassandraConfig.class)
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class BaseRepositoryTest {
-
-
-    private static EmbeddedCassandra embeddedCassandra = new EmbeddedCassandra();
-
+public class BaseRepositoryTest extends BaseTest{
 
     @AfterAll
     public void afterClass() {

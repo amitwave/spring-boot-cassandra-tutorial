@@ -3,6 +3,7 @@ package com.wave.tutorial.customer.simple;
 
 import com.wave.tutorial.CassandraConfig;
 import com.wave.tutorial.customer.EmbeddedCassandra;
+import com.wave.tutorial.customer.common.BaseTest;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,16 +14,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @ContextConfiguration(classes = CassandraConfig.class)
-public class SimpleCustomerRepositoryTest {
+public class SimpleCustomerRepositoryTest extends BaseTest {
 
-    private static EmbeddedCassandra embeddedCassandra = new EmbeddedCassandra();
     @Autowired
     private SimpleCustomerRepository simpleCustomerRepository;
-
-    @AfterAll
-    public static void afterClass() {
-        //embeddedCassandra.stop();
-    }
 
     @Test
     public void shouldSaveAndRetrieveCustomer() {
