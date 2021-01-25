@@ -1,0 +1,27 @@
+describe customer_simple;
+
+CREATE TABLE cassandra_tutorial.customer_simple (
+    customer_id int PRIMARY KEY,
+    age int,
+    city text,
+    country text,
+    name text,
+    state text
+);
+
+insert into customer_simple (customer_id, name, age, city, state, country)
+values(1, 'Anthony', 22, 'London', 'GL', 'England');
+
+insert into customer_simple (customer_id, name, age, city, state, country)
+values(2, 'Ram', 25, 'Southampton', 'Hampshire', 'England');
+
+insert into customer_simple (customer_id, name, age, city, state, country)
+values(3, 'Sam', 28, 'Burnham', 'Bucks', 'England');
+
+select * from customer_simple;
+select * from customer_simple where customer_id=1;
+
+select * from customer_simple where age=25 ;
+select * from customer_simple where age=25 ALLOW FILTERING;
+
+drop table customer_simple;

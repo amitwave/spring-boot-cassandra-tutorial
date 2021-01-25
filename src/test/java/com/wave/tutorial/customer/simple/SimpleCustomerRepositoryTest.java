@@ -43,13 +43,13 @@ public class SimpleCustomerRepositoryTest extends BaseTest {
         Customer customer = new Customer(1, "Atlas", 26, "London", "Berks", "England");
         cassandraTemplate.insert(customer);
 
-        Query query = Query.query(where("customerId").is(1));
+        Query query = Query.query(where("customer_id").is(1));
 
         Customer expectedCustomer = cassandraTemplate.selectOne(query, Customer.class);
 
         assertEquals(expectedCustomer, customer, "Unexpected customer");
 
-        expectedCustomer = cassandraTemplate.selectOne("select * from customer_simple where customerId=1", Customer.class);
+        expectedCustomer = cassandraTemplate.selectOne("select * from customer_simple where customer_id=1", Customer.class);
 
         assertEquals(expectedCustomer, customer, "Unexpected customer");
 

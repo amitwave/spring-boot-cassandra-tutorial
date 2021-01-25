@@ -1,0 +1,9 @@
+describe keyspaces;
+
+describe cassandra_tutorial;
+
+drop keyspace cassandra_tutorial;
+
+CREATE KEYSPACE cassandra_tutorial WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+
+use cassandra_tutorial;

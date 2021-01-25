@@ -1,0 +1,42 @@
+
+describe customer_simple_partition_clustering;
+
+CREATE TABLE cassandra_tutorial.customer_simple_partition_clustering (
+    customer_id int,
+    age int,
+    name text,
+    city text,
+    country text,
+    state text,
+    PRIMARY KEY (customer_id, age, name)
+) WITH CLUSTERING ORDER BY (age ASC, name ASC);
+
+insert into customer_simple_partition_clustering (customer_id, name, age, city, state, country)
+values(1, 'Rams', 25, 'London', 'GL', 'England');
+
+insert into customer_simple_partition_clustering (customer_id, name, age, city, state, country)
+values(2, 'Lez', 25, 'London', 'GL', 'England');
+
+insert into customer_simple_partition_clustering (customer_id, name, age, city, state, country)
+values(3, 'Alex', 23, 'London', 'GL', 'England');
+
+insert into customer_simple_partition_clustering (customer_id, name, age, city, state, country)
+values(3, 'Roms', 24, 'London', 'GL', 'England');
+
+insert into customer_simple_partition_clustering (customer_id, name, age, city, state, country)
+values(4, 'Sam', 24, 'London', 'GL', 'England');
+
+insert into customer_simple_partition_clustering (customer_id, name, age, city, state, country)
+values(4, 'Ross', 24, 'London', 'GL', 'England');
+
+insert into customer_simple_partition_clustering (customer_id, name, age, city, state, country)
+values(4, 'Rol', 25, 'London', 'GL', 'England');
+
+
+select * from customer_simple_partition_clustering;
+select * from customer_simple_partition_clustering where customer_id=1;
+
+select * from customer_simple_partition_clustering where age=25 ;
+select * from customer_simple_partition_clustering where age=25 ALLOW FILTERING;
+
+drop table customer_simple_partition_clustering;

@@ -15,8 +15,7 @@ import static org.springframework.data.cassandra.core.cql.PrimaryKeyType.PARTITI
 @Table("customer_simple")
 public class Customer {
 
-    @PrimaryKeyColumn(name = "customer_id", type = PARTITIONED)
-    @PrimaryKey
+    @PrimaryKey("customer_id")
     private Integer customerId;
 
     @Column("name")
