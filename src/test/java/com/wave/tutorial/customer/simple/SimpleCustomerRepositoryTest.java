@@ -1,10 +1,7 @@
 package com.wave.tutorial.customer.simple;
 
-import com.datastax.oss.driver.api.querybuilder.select.Select;
 import com.wave.tutorial.CassandraConfig;
-import com.wave.tutorial.customer.EmbeddedCassandra;
 import com.wave.tutorial.customer.common.BaseTest;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +12,6 @@ import org.springframework.test.context.ContextConfiguration;
 
 import java.util.List;
 
-import static com.datastax.oss.driver.api.querybuilder.QueryBuilder.literal;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.springframework.data.cassandra.core.query.Criteria.where;

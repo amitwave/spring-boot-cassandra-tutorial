@@ -2,9 +2,7 @@ package com.wave.tutorial.customer.simplepartitionclustering;
 
 
 import com.wave.tutorial.CassandraConfig;
-import com.wave.tutorial.customer.EmbeddedCassandra;
 import com.wave.tutorial.customer.common.BaseTest;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
