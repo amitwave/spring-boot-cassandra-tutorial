@@ -24,7 +24,7 @@ public class SimpleCustomerRepositoryTest extends BaseTest {
     private SimpleCustomerRepository simpleCustomerRepository;
 
 
-    // Just to demothat one can use CassandraTemlate too
+    // Just to demo that one can use CassandraTemlate too
     @Autowired
     CassandraTemplate cassandraTemplate;
 
