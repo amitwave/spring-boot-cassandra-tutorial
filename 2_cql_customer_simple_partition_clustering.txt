@@ -39,4 +39,10 @@ select * from customer_simple_partition_clustering where customer_id=1;
 select * from customer_simple_partition_clustering where age=25 ;
 select * from customer_simple_partition_clustering where age=25 ALLOW FILTERING;
 
+--Reading data by partition key and clustering key
+select * from customer_simple_partition_clustering where customer_id=4 and age=24;
+--Reading data by partition key and non clustering key:
+select * from customer_simple_partition_clustering where customer_id=4 and city='London' ;
+select * from customer_simple_partition_clustering where customer_id=4 and city='London' ALLOW FILTERING;
+
 drop table customer_simple_partition_clustering;
